@@ -55,3 +55,4 @@ if __name__ == '__main__':
 	leshi = Leshi()
 	pagenum = int(raw_input("输入要爬取的页数："))
 	leshi.start_work()
+	
