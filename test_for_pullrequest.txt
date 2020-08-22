@@ -1,1 +1,0 @@
-This is a file just for test of pull request.
