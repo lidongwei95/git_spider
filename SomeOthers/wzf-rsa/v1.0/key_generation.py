@@ -15,7 +15,7 @@ from Crypto.PublicKey import RSA
 # 伪随机数生成器
 random_generator = Random.new().read
 # rsa算法生成实例
-rsa = RSA.generate(1024, random_generator)
+rsa = RSA.generate(2048, random_generator)
 
 # Server的秘钥对的生成
 private_pem = rsa.exportKey()
