@@ -1,6 +1,6 @@
 """
 =========================
-# @Time : 2020/11/11 下午1:32 
+# @Time : 2020/11/11 下午1:32
 # @Author : ldw
 # @File : wzf_rsa_v1
 # @Software: PyCharm
@@ -8,10 +8,11 @@
 """
 from Crypto.Cipher import PKCS1_v1_5 as Cipher_pkcs1_v1_5
 from Crypto.Signature import PKCS1_v1_5
-
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
 import base64
+import time
+import hashlib
 
 
 class RsaUtil:
@@ -45,7 +46,8 @@ class RsaUtil:
     def private_long_decrypt(self, data, sentinel=b'decrypt error'):
         data = base64.b64decode(data)
         length = len(data)
-        default_length = 128
+        #default_length = 128
+        default_length = 256
         res = []
         for i in range(0, length, default_length):
             res.append(self.pri_key_obj.decrypt(data[i:i + default_length], sentinel))
